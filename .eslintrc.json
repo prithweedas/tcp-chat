@@ -1,0 +1,17 @@
+{
+	"extends": "airbnb-base",
+
+	"rules": {
+		"semi": ["error", "never"],
+		"linebreak-style": ["warn", "windows"],
+		"object-curly-spacing": [
+			"warn",
+			"always",
+			{ "arraysInObjects": true, "objectsInObjects": true }
+		],
+		"comma-dangle": ["error", "never"],
+		"max-len": ["error", { "code": 80, "comments": 65 }],
+		"indent": ["error", "tab"],
+		"no-tabs": "off"
+	}
+}
