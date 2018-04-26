@@ -5,9 +5,11 @@
 	"author": "Prithwee Das",
 	"license": "MIT",
 	"scripts": {
-		"start": "node dist/index.js",
+		"start:server": "node dist/server/index.js",
+		"start:client": "node dist/client/index.js",
 		"build": "rm -rf dist && babel src -d dist --copy-files",
-		"dev": "babel-node src/index.js"
+		"dev:server": "babel-node src/server/index.js",
+		"dev:client": "babel-node src/client/index.js"
 	},
 	"dependencies": {},
 	"devDependencies": {
