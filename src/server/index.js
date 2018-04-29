@@ -1,15 +1,15 @@
 import tcp from 'net'
-import { PORT } from '../config'
+import { PORT, ENCODEING } from '../config'
 
 const server = tcp.createServer()
-let id = 0
+
+const [port] = process.argv.slice(2)
 
 server.on('connection', socket => {
 	socket.write('Welcome')
-	const myId = id++
-	let counter = 0
-	setInterval(() => socket.write(`${myId}-${counter++}`), 2000)
+	socket.setEncoding(ENCODEING)
+	socket.on('data', data => console.log(data))
 })
 
-server.listen(PORT, () =>
-	process.stdout.write(`Server started on port ${PORT}`))
+server.listen(port || PORT, () =>
+	process.stdout.write(`Server started on port ${port || PORT}`))
