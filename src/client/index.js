@@ -1,12 +1,12 @@
 import tcp from 'net'
 
-import { PORT, ENCODEING } from '../config'
+import { PORT, ENCODEING, HOST } from '../config'
 
 const [host, port] = process.argv.slice(2)
 
 const client = tcp.createConnection(
-	{ host: host || '127.0.0.1', port: port || PORT },
-	() => process.stdout.write('Connected\n')
+	{ host: host || HOST, port: port || PORT },
+	() => process.stdout.write(`Connected to ${HOST}:${PORT} \n`)
 )
 
 client.setEncoding(ENCODEING)
