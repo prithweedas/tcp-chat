@@ -3,13 +3,16 @@ import { fork } from 'child_process'
 
 const [serverOrClient, ...otherArgs] = process.argv.slice(2)
 
+let serverProcess
+let clientProcess
+
 switch (serverOrClient) {
 case '--host':
-	fork(path.join(__dirname, 'server'), [...otherArgs])
+	serverProcess = fork(path.join(__dirname, 'server'), [...otherArgs])
 	break
 
 case '--connect':
-	fork(path.join(__dirname, 'client'), [...otherArgs])
+	clientProcess = fork(path.join(__dirname, 'client'), [...otherArgs])
 	break
 
 default:
@@ -18,4 +21,13 @@ Arguments must be one of the followings:
 	--host <PORT || 4000>
 	--connect <HOST || 127.0.0.1> <PORT || 4000>`)
 	break
+}
+if (serverProcess) {
+	serverProcess.on('error', err => console.log(err))
+	serverProcess.on('message', msg => console.log(msg))
+}
+
+if (clientProcess) {
+	clientProcess.on('message', msg => console.log(msg))
+	clientProcess.on('error', err => console.log(err))
 }

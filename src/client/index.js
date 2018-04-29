@@ -6,8 +6,10 @@ const [host, port] = process.argv.slice(2)
 
 const client = tcp.createConnection(
 	{ host: host || HOST, port: port || PORT },
-	() => process.stdout.write(`Connected to ${HOST}:${PORT} \n`)
+	() => console.log(`Connected to ${host || HOST}:${port || PORT}`)
 )
 
 client.setEncoding(ENCODEING)
 client.on('data', data => console.log(data))
+client.on('error', () =>
+	process.emitWarning(new Error('Oops! Something unexpected happend')))
