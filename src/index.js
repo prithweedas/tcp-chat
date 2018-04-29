@@ -1,14 +1,15 @@
+import path from 'path'
 import { fork } from 'child_process'
 
 const [serverOrClient, ...otherArgs] = process.argv.slice(2)
 
 switch (serverOrClient) {
 case '--host':
-	fork('./src/server', [...otherArgs])
+	fork(path.join(__dirname, 'server'), [...otherArgs])
 	break
 
 case '--connect':
-	fork('./src/client', [...otherArgs])
+	fork(path.join(__dirname, 'client'), [...otherArgs])
 	break
 
 default:
