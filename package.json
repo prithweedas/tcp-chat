@@ -7,10 +7,10 @@
 	"scripts": {
 		"build": "rm -rf dist && babel src -d dist --copy-files",
 		"start": "node dist",
-		"start:host": "yarn start --host",
+		"start:host": "yarn start --serve",
 		"start:connect": "yarn start --connect",
 		"dev": "babel-node src",
-		"dev:host": "yarn dev --host",
+		"dev:host": "yarn dev --serve",
 		"dev:connect": "yarn dev --connect"
 	},
 	"dependencies": {},

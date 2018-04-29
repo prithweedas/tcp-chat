@@ -7,7 +7,7 @@ let serverProcess
 let clientProcess
 
 switch (serverOrClient) {
-case '--host':
+case '--serve':
 	serverProcess = fork(path.join(__dirname, 'server'), [...otherArgs])
 	break
 
@@ -18,8 +18,8 @@ case '--connect':
 default:
 	console.log(`Invalid Arguments!
 Arguments must be one of the followings:
-	--host <PORT || 4000>
-	--connect <HOST || 127.0.0.1> <PORT || 4000>`)
+	--serve --port <PORT || 4000>
+	--connect --host <HOST || 127.0.0.1> --port <PORT || 4000>`)
 	break
 }
 if (serverProcess) {

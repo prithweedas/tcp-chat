@@ -1,9 +1,11 @@
 import tcp from 'net'
 import { PORT } from '../config'
+import { extractPort } from '../utils/extractFromArgs'
 
 const server = tcp.createServer()
 
-const [port] = process.argv.slice(2)
+const args = process.argv.slice(2)
+const port = extractPort(args)
 
 server.on('connection', socket => {
 	socket.write('Welcome')
