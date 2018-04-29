@@ -5,10 +5,11 @@
 	"author": "Prithwee Das",
 	"license": "MIT",
 	"scripts": {
-		"dev": "babel-node src",
-		"start:server": "node dist/server/index.js",
-		"start:client": "node dist/client/index.js",
 		"build": "rm -rf dist && babel src -d dist --copy-files",
+		"start": "node dist",
+		"start:server": "yarn start --server",
+		"start:client": "yarn start --client",
+		"dev": "babel-node src",
 		"dev:server": "yarn dev --server",
 		"dev:client": "yarn dev --client"
 	},
