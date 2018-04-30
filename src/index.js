@@ -32,5 +32,8 @@ if (serverProcess) {
 if (clientProcess) {
 	clientProcess.on('message', msg => console.log(msg))
 
-	clientProcess.on('error', err => console.log(err))
+	clientProcess.on('error', err => {
+		console.log(err)
+		process.exit()
+	})
 }
