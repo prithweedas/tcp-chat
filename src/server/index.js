@@ -21,7 +21,7 @@ server.on('connection', socket => {
 		if (!messageApi.alreadyLoggedIn(socket)) {
 			socket.name = data
 			messageApi.addClient(socket)
-			messageApi.sendMessage(`${socket.name} joined the chat`)
+			messageApi.sendMessage(`${socket.name} joined the chat`, socket)
 			socket.write(`Welcome ${socket.name}, you can start chatting now`)
 			return
 		}
