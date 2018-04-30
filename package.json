@@ -3,9 +3,14 @@
 	"version": "1.0.0",
 	"main": "src/index.js",
 	"author": "Prithwee Das",
+	"description": "It's a simple tcp chat client and server built with node's net module",
 	"license": "MIT",
 	"bin": {
 		"tcp-chat": "./bin/tcp-chat.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/prithweedas/tcp-chat"
 	},
 	"scripts": {
 		"build": "rm -rf dist && babel src -d dist --copy-files",
@@ -31,8 +36,8 @@
 		"eslint-config-airbnb": "16.1.0",
 		"eslint-config-airbnb-base": "^12.1.0",
 		"eslint-plugin-babel": "^5.1.0",
-		"eslint-plugin-import": "2.7.0",
-		"eslint-plugin-jsx-a11y": "6.0.2",
-		"eslint-plugin-react": "7.4.0"
-	}
+		"eslint-plugin-import": "2.7.0"
+	},
+	"homepage": "https://github.com/prithweedas/tcp-chat",
+	"keywords": ["chat", "tcp", "chat server", "node", "node.js", "prithwee", "prithwee das"]
 }
