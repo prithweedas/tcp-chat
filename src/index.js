@@ -22,6 +22,7 @@ Arguments must be one of the followings:
 	--connect --host <HOST || 127.0.0.1> --port <PORT || 4000>`)
 	break
 }
+
 if (serverProcess) {
 	serverProcess.on('error', err => console.log(err))
 	serverProcess.on('message', msg => console.log(msg))
