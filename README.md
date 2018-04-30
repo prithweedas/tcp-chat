@@ -2,7 +2,7 @@
 
 This is a simple TCP chat app that can either host a chat or connect to another chat server.
 
-# Options
+## Options
 
 |  command  |  default  |                                usage                                 |
 | :-------: | :-------: | :------------------------------------------------------------------: |
