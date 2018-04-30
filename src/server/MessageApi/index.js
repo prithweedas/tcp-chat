@@ -13,7 +13,7 @@ class MessageApi {
 
 	sendMessage = (msg, sender) => {
 		this.clients.forEach(client => {
-			if (client.id !== sender.id) client.write(`${sender.name}: ${msg}`)
+			if (client.id !== sender.id) client.write(`${sender.name || ''}: ${msg}`)
 		})
 	}
 }
