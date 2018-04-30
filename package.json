@@ -10,15 +10,14 @@
 	"scripts": {
 		"build": "rm -rf dist && babel src -d dist --copy-files",
 		"start": "node dist",
-		"start:serve": "yarn start --serve",
-		"start:connect": "yarn start --connect",
+		"start:serve": "npm start -- --serve",
+		"start:connect": "npm start -- --connect",
 		"dev": "babel-node src",
-		"dev:serve": "yarn dev --serve",
-		"dev:connect": "yarn dev --connect"
+		"dev:serve": "npm run dev -- --serve",
+		"dev:connect": "npm run dev -- --connect"
 	},
 	"dependencies": {
 		"dantil": "github:dannynemer/dantil",
-		"readline-async": "github:dannynemer/readline-async",
 		"shortid": "^2.2.8"
 	},
 	"devDependencies": {

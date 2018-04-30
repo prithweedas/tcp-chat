@@ -8,11 +8,19 @@ const args = process.argv.slice(2)
 const port = extractPort(args)
 const host = extractHost(args)
 
-console.log(host, port)
 const client = tcp.createConnection({ host: host || HOST, port: port || PORT }, () =>
 	console.log(`Connected to ${host || HOST}:${port || PORT}`))
 rl.onLine(line => {
 	client.write(line)
+})
+
+rl.addCommands({
+	name: 'exit',
+	description: 'Exit the chat',
+	func() {
+		client.end()
+		process.exit()
+	}
 })
 
 client.setEncoding(ENCODEING)
