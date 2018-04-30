@@ -1,6 +1,6 @@
 {
 	"name": "tcp-chat-server",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"main": "src/index.js",
 	"author": "Prithwee Das",
 	"description": "It's a simple tcp chat client and server built with node's net module",
