@@ -8,8 +8,6 @@ const args = process.argv.slice(2)
 const port = extractPort(args)
 const host = extractHost(args)
 
-console.log(port)
-
 const client = tcp.createConnection({ host: host || HOST, port: port || PORT }, () =>
 	console.log(`Connected to ${host || HOST}:${port || PORT}`))
 rl.onLine(line => {
@@ -27,7 +25,7 @@ rl.addCommands({
 
 client.setEncoding(ENCODEING)
 client.on('data', data => console.log(data))
-client.on('error', err => {
-	console.log(err)
-	process.emitWarning(new Error('Oops! Something unexpected happend'))
+client.on('error', () => {
+	console.log('Oops! Something unexpected happend')
+	process.exit(0)
 })
