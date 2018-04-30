@@ -18,6 +18,6 @@ deploy:
   provider: npm
   email: prithweedas123@gmail.com
   api_key: $npm_token
-	name: Prithwee Das
+  name: Prithwee Das
   on:
     branch: master
