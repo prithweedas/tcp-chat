@@ -25,10 +25,12 @@ Arguments must be one of the followings:
 
 if (serverProcess) {
 	serverProcess.on('error', err => console.log(err))
+
 	serverProcess.on('message', msg => console.log(msg))
 }
 
 if (clientProcess) {
 	clientProcess.on('message', msg => console.log(msg))
+
 	clientProcess.on('error', err => console.log(err))
 }
