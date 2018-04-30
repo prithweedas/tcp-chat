@@ -1,6 +1,6 @@
 {
 	"name": "tcp-chat-server",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "src/index.js",
 	"author": "Prithwee Das",
 	"description": "It's a simple tcp chat client and server built with node's net module",
@@ -39,5 +39,13 @@
 		"eslint-plugin-import": "2.7.0"
 	},
 	"homepage": "https://github.com/prithweedas/tcp-chat",
-	"keywords": ["chat", "tcp", "chat server", "node", "node.js", "prithwee", "prithwee das"]
+	"keywords": [
+		"chat",
+		"tcp",
+		"chat server",
+		"node",
+		"node.js",
+		"prithwee",
+		"prithwee das"
+	]
 }
