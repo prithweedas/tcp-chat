@@ -2,6 +2,8 @@
 
 This is a simple TCP chat app that can either host a chat or connect to another chat server.
 
+> Install it globally using `npm i -g tcp-chat-server`
+
 ## Options
 
 |  command  |  default  |                                usage                                 |
