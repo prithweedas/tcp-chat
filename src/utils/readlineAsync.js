@@ -301,32 +301,33 @@ rl._printUsage = function() {
 	util.log(this.usage)
 }
 
+// NOTE: removed builtin commands
 // Add built-in commands.
-rl.addCommands(
-	{
-		name: 'help',
-		description: 'Print this screen.',
-		func: rl._printUsage.bind(rl)
-	},
-	{
-		name: 'history',
-		description: 'Print the RLI history.',
-		func() {
-			const historyLen = rl.history.length
-			for (let h = historyLen - 1; h > 0; --h) {
-				const idx = historyLen - h
-				util.log(`${(historyLen > 10 && idx < 10 ? ' ' : '') + idx}  ${rl.history[h]}`)
-			}
-		}
-	},
-	{
-		name: 'repl',
-		description: 'Enter the Node.js REPL.',
-		func() {
-			childProcess.execSync('node', { stdio: 'inherit' })
-		}
-	}
-)
+// rl.addCommands(
+// 	{
+// 		name: 'help',
+// 		description: 'Print this screen.',
+// 		func: rl._printUsage.bind(rl)
+// 	},
+// 	{
+// 		name: 'history',
+// 		description: 'Print the RLI history.',
+// 		func() {
+// 			const historyLen = rl.history.length
+// 			for (let h = historyLen - 1; h > 0; --h) {
+// 				const idx = historyLen - h
+// 				util.log(`${(historyLen > 10 && idx < 10 ? ' ' : '') + idx}  ${rl.history[h]}`)
+// 			}
+// 		}
+// 	},
+// 	{
+// 		name: 'repl',
+// 		description: 'Enter the Node.js REPL.',
+// 		func() {
+// 			childProcess.execSync('node', { stdio: 'inherit' })
+// 		}
+// 	}
+// )
 
 // The number of built-in commands. Used to ensure the built-in commands are the last commands in the usage screen and `rl.completer` suggestions.
 rl.builtInCommandCount = rl.commandNames.length
